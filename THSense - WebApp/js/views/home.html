@@ -1,0 +1,102 @@
+<div id="wrapper" ng-controller="HomeController as hc" ng-init="connectToMosq()">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation" style="background-color: darkslategray; margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" style="color: ghostwhite;" href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>THSense</strong></a>
+        </div>
+        <!-- /.navbar-header -->
+
+        <ul class="nav navbar-top-links navbar-right">
+            <!-- /.dropdown -->
+            <li class="dropdown mod-theme">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-globe fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="scroll-bar dropdown-menu dropdown-alerts" id="notify_list">
+                    <li id="no-messages">
+                        <a href="#">
+                            <div>
+                                <i class="fa fa-comment fa-fw"></i> No Messages                                   
+                            </div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    
+                </ul>
+                <!-- /.dropdown-alerts -->
+            </li>
+
+            <!-- /.dropdown -->
+            <li class="dropdown mod-theme">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li ng-click="logout()"><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                </ul>
+                <!-- /.dropdown-user -->
+            </li>
+            <!-- /.dropdown -->
+        </ul>
+        <!-- /.navbar-top-links -->
+    </nav>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-1">
+            </div>    
+            <div class="col-lg-11">
+                <h1 class="page-header" style="border-bottom: 3px solid;">Dashboard
+                <button type="button" class="btn btn-danger pull-right" ng-click="hc.addDevice()">
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Device
+                </button></h1>
+            </div>
+        </div>
+
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-md-4"> <span class="device-info">Click the device for more info</span>
+                <div ng-repeat="device in hc.devices">
+                <div class="col-md-12">
+                    <div class="responsive-circle nyc-circle">
+                        <h5><div class="circle-inner" style="cursor:pointer" ng-click="hc.manageDevice(device)">Device {{device.teamId}}
+                                <h6><br/></h6>
+                                <h6>Temperature: {{device.tempVal}} &degC </h6>
+                                <h6>Humidity: {{device.humVal}} %</h6>
+
+                        </div></h5>
+                    </div>
+                </div>
+            </div>
+
+
+            </div>    
+
+            <div class="col-md-8">
+                <!-- Show Kibana --> 
+                <iframe src="http://52.33.59.166:5601/goto/a19aa349abe2a7c5f44b39eacf5d9a5e" height="400" width="850"></iframe>                           
+            </div>    
+            
+        </div>
+
+    </div>
+    <!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Mosquitto JavaScript -->
+<script src="../../dist/js/mosquitto.js"></script>
