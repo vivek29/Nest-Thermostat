@@ -1,8 +1,10 @@
 # Implementing the Nest Thermostat
 
-- THSense is a learning thermostat which collects the Temperature and Humidity Sensing data from Arduino and sends it via RF to the Gateway (Raspberry Pi). 
-- We further perform Data Analytics on the real-time data collected in the Cloud using the ELK Stack. 
-- Also, one can control and monitor the registered thermostats (devices) remotely via the web application.
+- An IoT application which helps monitor and control the thermostat's using a web app with real time temperature predictions based on the home thermal model.
+- THSense is a learning thermostat which collects the temperature and humidity sensing data using an Arduino Uno kit and transmits it to the Gateway (Raspberry Pi) via RF.
+- The Gateway further publishes the real time data using the Mosquitto and Kafka message broker and forwards it to the ELK stack for data analysis and Apache Spark for the prediction component.
+- The prediction component uses the Linear Regression algorithm to predict the temperature values based on the home thermal model.
+- Built a web application using AngularJS that helps monitor and control the thermostats, shows the Kibana visualizations (analytics) and the next 5 hours predicted temperature.
 
 Technology Stack
  
