@@ -46,28 +46,3 @@ Technology Stack
 4. We have used Angular JS to build the web app and Serve (a Directory Server) to host the application.
 
 -- See the Project1_Group4_Report.pdf for Circuit Connections, Setup and how to execute the code and screenshots of the web app.
-
-*** Server IP & Ports
-
-Following are the services deployed for the assignment -
-
-1. Mosquitto Broker -
-	- IP – 52.33.59.166 (AWS Instance Elastic IP)
-	- Port – 1883
-	- Websockets – 9001, 9002
-	- Listeners - 52.33.59.166:1883 and Websocket - 52.33.59.166:9001
-2. Kafka -
-	- Server IP: 52.33.59.166:9092
-	- Zookeeper IP: 52.33.59.166:2181
-3. Elasticsearch -
-	- IP: 52.33.59.166:9200
-4. Logstash -
-	- IP: 52.33.59.166:9300
-5. Kibana -
-	- IP: 52.33.59.166:5601
-6. WebApp -
-	- IP: 52.33.59.166:3000
-7. Spark - 
-	- IP: 50.18.94.136:9999
-
-
