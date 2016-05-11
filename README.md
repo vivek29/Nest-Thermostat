@@ -8,7 +8,7 @@
 
 Technology Stack
  
-*- Hardware
+- Hardware
 	Arduino Uno
 	Raspberry Pi
 	RF Transmitter and Receiver
@@ -16,7 +16,7 @@ Technology Stack
 	Heating Pad
 	LCD Display
 
-*- Software/Cloud
+- Software/Cloud
 	Redis
 	Mosquitto Broker
 	Apache Kafka
